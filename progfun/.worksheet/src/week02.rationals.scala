@@ -12,15 +12,27 @@ object rationals {;import org.scalaide.worksheet.runtime.library.WorksheetSuppor
   x.neg;System.out.println("""res5: week02.Rational = """ + $show(res$5));$skip(27); 
 	val z = new Rational(3,2);System.out.println("""z  : week02.Rational = """ + $show(z ));$skip(17); val res$6 = 
 	x.sub(y).sub(z);System.out.println("""res6: week02.Rational = """ + $show(res$6));$skip(10); val res$7 = 
-	y.sub(y);System.out.println("""res7: week02.Rational = """ + $show(res$7))}
+	y.sub(y);System.out.println("""res7: week02.Rational = """ + $show(res$7));$skip(11); val res$8 = 
+	x.less(y);System.out.println("""res8: Boolean = """ + $show(res$8));$skip(10); val res$9 = 
+	x.max(y);System.out.println("""res9: Boolean = """ + $show(res$9));$skip(17); val res$10 = 
+	x.maxElegant(y);System.out.println("""res10: week02.Rational = """ + $show(res$10));$skip(33); 
+	val strange = new Rational(1,0);System.out.println("""strange  : week02.Rational = """ + $show(strange ))}
 }
 
 class Rational(x: Int, y: Int){
+	//Dealing with exception divison by zero
+	require(y != 0, "denominator ough to be nonzero")
 	//Grater Common Denominator definiton
 	private def gcd(a:Int, b:Int):Int = if(b==0) a else gcd(b,a%b)
-	private val g = gcd(x,y)
-	def numer = x/g
-	def denom = y/g
+	//private val g = gcd(x,y)
+	//def numer = x/g
+	//def denom = y/g
+	val numer = x / gcd(x,y)
+	val denom = y / gcd(x,y)
+	
+	def less(that: Rational) = numer * that.denom < that.numer * denom
+	def max(that: Rational) = ! less(that)
+	def maxElegant(that: Rational) = if (this.less(that)) that else this
 	
 	def add(that: Rational) =
 		new Rational(
