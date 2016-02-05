@@ -19,8 +19,10 @@ class Rational(x: Int, y: Int){
 	//Grater Common Denominator definiton
 	private def gcd(a:Int, b:Int):Int = if(b==0) a else gcd(b,a%b)
 	private val g = gcd(x,y)
-	def numer = x/g
-	def denom = y/g
+	//def numer = x/g
+	//def denom = y/g
+	val numer = x / gcd(x,y)
+	val denom = y / gcd(x,y)
 	
 	def add(that: Rational) =
 		new Rational(
