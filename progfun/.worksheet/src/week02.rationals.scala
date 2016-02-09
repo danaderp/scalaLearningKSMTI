@@ -14,8 +14,9 @@ object rationals {;import org.scalaide.worksheet.runtime.library.WorksheetSuppor
 	x.sub(y).sub(z);System.out.println("""res6: week02.Rational = """ + $show(res$6));$skip(10); val res$7 = 
 	y.sub(y);System.out.println("""res7: week02.Rational = """ + $show(res$7));$skip(11); val res$8 = 
 	x.less(y);System.out.println("""res8: Boolean = """ + $show(res$8));$skip(10); val res$9 = 
-	x.max(y);System.out.println("""res9: Boolean = """ + $show(res$9));$skip(17); val res$10 = 
-	x.maxElegant(y);System.out.println("""res10: week02.Rational = """ + $show(res$10));$skip(33); 
+	x.max(y);System.out.println("""res9: Boolean = """ + $show(res$9));$skip(9); val res$10 = 
+	x max y;System.out.println("""res10: Boolean = """ + $show(res$10));$skip(17); val res$11 = 
+	x.maxElegant(y);System.out.println("""res11: week02.Rational = """ + $show(res$11));$skip(33); 
 	val strange = new Rational(1,0);System.out.println("""strange  : week02.Rational = """ + $show(strange ))}
 }
 

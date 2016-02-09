@@ -15,13 +15,14 @@ object rationals {
 	y.sub(y)                                  //> res7: week02.Rational = 0/1
 	x.less(y)                                 //> res8: Boolean = true
 	x.max(y)                                  //> res9: Boolean = false
-	x.maxElegant(y)                           //> res10: week02.Rational = 5/7
+	x max y                                   //> res10: Boolean = false
+	x.maxElegant(y)                           //> res11: week02.Rational = 5/7
 	val strange = new Rational(1,0)           //> java.lang.IllegalArgumentException: requirement failed: denominator ough to 
                                                   //| be nonzero
                                                   //| 	at scala.Predef$.require(Predef.scala:219)
-                                                  //| 	at week02.Rational.<init>(week02.rationals.scala:24)
+                                                  //| 	at week02.Rational.<init>(week02.rationals.scala:25)
                                                   //| 	at week02.rationals$$anonfun$main$1.apply$mcV$sp(week02.rationals.scala:
-                                                  //| 19)
+                                                  //| 20)
                                                   //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$$anonfun$$exe
                                                   //| cute$1.apply$mcV$sp(WorksheetSupport.scala:76)
                                                   //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$.redirected(W
